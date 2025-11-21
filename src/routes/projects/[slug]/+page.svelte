@@ -1,15 +1,27 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
+	import projects from '$lib/data/projects.json';
 
 	let project = null;
 	let isLoading = true;
 
-	onMount(async () => {
-		const response = await fetch(`/api/projects/${$page.params.slug}`);
-		project = await response.json();
+	// onMount(async () => {
+	// 	const response = await fetch(`${base}/api/projects/${$page.params.slug}`);
+	// 	project = await response.json();
+	// 	isLoading = false;
+	// });
+
+	$:
+	if ($page) {
+		const slug = $page.params.slug;
+
+		// find the project by slug
+		project = projects.find(p => p.slug === slug);
 		isLoading = false;
-	});
+	}
+
 </script>
 
 <svelte:head>

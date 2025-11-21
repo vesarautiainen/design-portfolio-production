@@ -1,11 +1,12 @@
 <script>
 	let { project } = $props();
+	console.log('ProjectCard received project:', project);
 </script>
 
 <div class="group cursor-pointer overflow-hidden rounded-lg">
 	<div class="relative h-72 md:h-96 overflow-hidden bg-muted">
 		<img
-			src={project.thumbnail || "/placeholder.svg"}
+			src={project.thumbnail || "/placeholder-tba.webp"}
 			alt={project.title}
 			class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
 		/>
