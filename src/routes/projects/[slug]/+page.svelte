@@ -4,6 +4,9 @@
 	import { base } from '$app/paths';
 	import projects from '$lib/data/projects.json';
 
+	import { contentComponentMap } from '$lib/components/content/registry';
+
+
 	let project = null;
 	let isLoading = true;
 
@@ -29,7 +32,7 @@
 	<meta name="description" content={project?.description} />
 </svelte:head>
 
-<article class="px-6 md:px-12 py-20 max-w-4xl mx-auto">
+<article class="px-6 md:px-12 py-20 max-w-5xl mx-auto">
 	{#if isLoading}
 		<div class="space-y-6">
 			<div class="h-10 bg-muted rounded w-1/3 animate-pulse" />
@@ -79,8 +82,11 @@
 
 			<!-- Content -->
 			<div class="prose prose-invert max-w-none">
-				<h2 class="text-2xl font-bold mt-8 mb-4">Project Overview</h2>
-				<p class="text-foreground leading-relaxed">{project.content}</p>
+				   {#each project.content as contentBlock}
+					   {#if contentComponentMap[contentBlock.type]}
+						   <svelte:component this={contentComponentMap[contentBlock.type]} {...contentBlock} />
+					   {/if}
+				   {/each}
 
 				{#if project.images && project.images.length > 0}
 					<h2 class="text-2xl font-bold mt-8 mb-4">Gallery</h2>
