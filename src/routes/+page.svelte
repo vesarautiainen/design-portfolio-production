@@ -26,7 +26,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="px-6 md:px-12 py-20 md:py-32 max-w-6xl mx-auto">
+<section class="px-6 md:px-12 py-20 md:py-28 max-w-6xl mx-auto">
 	<div class="space-y-4">
 		<h1 class="text-4xl md:text-6xl font-bold text-balance">
 			Product Development Creativity Unleashed
@@ -42,13 +42,13 @@
 	<h2 class="text-2xl md:text-3xl font-bold mb-12">Selected Work</h2>
 
 	{#if isLoading}
-		<div class="grid md:grid-cols-2 gap-8">
+		<div class="grid md:grid-cols-2 gap-16">
 			{#each Array(4) as _}
 				<div class="h-96 bg-muted rounded-lg animate-pulse" />
 			{/each}
 		</div>
 	{:else}
-		<div class="grid md:grid-cols-2 gap-8">
+		<div class="grid md:grid-cols-2 gap-16">
 			{#each featuredProjects as project (project.id)}
 				<a href="/projects/{project.slug}" class="group">
 					<ProjectCard {project} />

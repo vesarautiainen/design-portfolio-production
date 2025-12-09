@@ -95,7 +95,7 @@
 		<div class="space-y-8">
 			<!-- Header -->
 			<div>
-				<a href="/projects" class="text-muted-foreground hover:text-foreground mb-4 inline-block">
+				<a href="/projects" class="text-muted-foreground hover:text-foreground mb-8 inline-block">
 					← Back to Projects
 				</a>
 				<h1 class="text-4xl md:text-5xl font-bold mb-3">{project.title}</h1>
@@ -123,11 +123,12 @@
 			</div>
 
 			<!-- Featured Image -->
-			<img
-				src={project.featured_image || "/placeholder.svg"}
-				alt={project.title}
-				class="w-full h-96 object-cover rounded-lg"
-			/>
+				<img
+					src={project.featured_image || "/placeholder.svg"}
+					alt={project.title}
+				class="block mx-auto rounded-lg cursor-pointer"
+				style="max-width:100%; max-height:480px; object-fit:contain; display:block;"
+				/>
 
 			<!-- Content -->
 			<div class="prose prose-invert max-w-none">
