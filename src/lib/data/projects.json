@@ -6,7 +6,8 @@
     "categories": ["UX Design", "Prototyping", "UI Development"],
     "description": "Canonical Ltd. started developing Ubuntu for mobile devices. As part of this effort, I designed and prototyped an application switcher for Ubuntu Touch OS.",
     "thumbnail": "/project-1/composition.webp",
-    "featured": true,
+    "show": true,
+    "featured": false,
     "featured_image": "/project-1/composition.webp",
     "year": "2015",
     "role": "Lead Interaction Designer",
@@ -81,7 +82,8 @@
     "categories": ["UX Design", "Accessibility"],
     "description": "Designing accessible change indicators for Visual Studio to enhance code management for developers with disabilities.",
     "thumbnail": "/project-2/thumb.webp",
-    "featured": true,
+    "show": true,
+    "featured": false,
     "featured_image": "/project-2/featured.webp",
     "year": 2021  ,
     "role": "Senior UX Designer",
@@ -152,7 +154,7 @@
           {
             "src": "/project-2/final-1.webp",
             "alt": "alt text",
-            "caption": "Final design ... "
+            "caption": "All different change types in light and dark themes."
           },
           {
             "src": "/project-2/final-2.webp",
@@ -162,7 +164,7 @@
           {
             "src": "/project-2/final-3.webp",
             "alt": "alt text",
-            "caption": "Hex values... "
+            "caption": "Accessible color hex values ready to be tokenized. "
           }
         ]
       },
@@ -177,10 +179,11 @@
     "id": 3,
     "slug": "visual-studio-copilot-extenders",
     "title": "Visual Studio Copilot Integrations",
-    "categories": ["UX Design", "AI"],
+    "categories": ["UX Design", "AI", "Prototyping"],
     "description": "Designing Copilot AI integrations across developer tools",
     "thumbnail": "/project-3/Featured-VS-Copilot.webp",
-    "featured": true,
+    "show": true,
+    "featured": false,
     "featured_image": "/project-3/Featured-VS-Copilot.webp",
     "year": 2025,
     "role": "Principal Designer",
@@ -192,23 +195,25 @@
         "text": "Aligned GH Copilot integrations across toolsets throughout Visual Studio. I navigated competing constraints across different feature teams and aligned numerous stakeholders."
       },
       {
-        "type": "ImageSection",
-        "title": "UX Problem",
-        "image": "/project-3/problem.webp",
-        "alt": "@todo: Add alt text",
-        "caption": "UI full of inconsistencies confusing users, causing frustration, inefficiency, and discovery issues.",
-        "align": "right",
+        "type": "TextSection",
+        "title": "Project Overview",
         "text": "The user experience in different Visual Studio tools was inconsistent, didn't follow design guidelines, and lacked understanding of end-to-end scenarios. Teams worked in silos, leading to fragmented experiences that confused users and hindered productivity. There was a need to unify the design language, improve usability, and ensure accessibility across all Copilot integrations."
+      },
+      {
+        "type": "TextSection",
+        "title": "Coming Soon...",
+        "text": "Examples of the design work will be added here soon. Thanks for you patience! If interested in learning more right now, reach out to me directly via LinkedIn or email."
       }
     ] 
   },
   {
     "id": 4,
     "slug": "visual-studio-new-git-experience",
-    "title": "New Git Experience",
-    "categories": ["UX Design", "User Research"],
-    "description": "Designing a new Git version control UX",
+    "title": "Git Version Control Experience",
+    "categories": ["UX Design", "User Research", "Prototyping"],
+    "description": "Designing a new Git version control UX for Visual Studio to enhance developer productivity and collaboration.",
     "thumbnail": "/project-4/Featured-VS-Copilot.webp",
+    "show": false,
     "featured": false,
     "featured_image": "/project-4/Featured-VS-Copilot.webp",
     "year": 2020,
@@ -218,8 +223,9 @@
       {
         "type": "TextSection",
         "title": "Project Overview",
-        "text": "Project 4 overview text goes here."
+        "text": "Git is the most used version control system in the world. Developers use it to manage their code changes and collaborate with other developers. Visual Studio IDE had an existing Git experience that was outdated and not user-friendly. I led the redesign effort to create make it more intuitive, efficient, and accessible for all developers."
       },
+      
       {
         "type": "ImageSection",
         "title": "UX Problem",
@@ -228,6 +234,11 @@
         "caption": "Multiple problems identified in the existing version control interface.",
         "align": "right",
         "text": "The version control interface in Visual Studio had several usability issues that hindered developers' productivity. Key problems included unclear status indicators, a cluttered layout, and inefficient workflows for staging and committing changes."
+      },
+      {
+        "type": "TextSection",
+        "title": "Coming Soon...",
+        "text": "Examples of the design work will be added here soon. Thanks for you patience! If interested in learning more right now, reach out to me directly via LinkedIn or email."
       },
       {
         "type": "ImageSection",
@@ -253,5 +264,107 @@
         "text": "The New Git Experience (Youtube): https://www.youtube.com/watch?v=ZiQ2LXtAJ6I"
       }
     ]
-  }
+  },
+  {
+    "id": 5,
+    "slug": "ubuntu-indicators",
+    "title": "Ubuntu Touch Indicators", 
+    "categories": ["Prototyping", "Interaction Design", "Tooling", "UI Development"],
+    "description": "Gesture based indicator panel interactions for Ubuntu Touch OS.", 
+    "thumbnail": "/project-5/thumb.webp",
+    "show": true,
+    "featured": true,
+    "featured_image": "/project-5/featured.webp",
+    "year": 2014,
+    "role": "UX Prototyper",
+    "client": "Canonical Ltd.",
+    "content":[
+      {
+        "type": "TextSection",
+        "title": "The UX Challenge",
+        "text": "User testing had showed that the existing Ubuntu Touch indicators were suffering from several usability issues. My task was to re-design indicators and to fix following problems:\n\n•  Users didn’t understand the connections between different UI elements.\n• Users struggled with the swipe down gesture and didn’t get the targeted menu open.\n• Users struggled navigating between open menus.\n• The current design didn’t handle overflow situation when there are more indicators than available space."
+      },
+      {
+        "type": "TextSection",
+        "title": "The UX Approach",
+        "text": "To handle the overflow **non-relevant indicators are hidden** in closed state. As soon as the opening gesture is started they become visible again and their menus are accessible. \n\nIndicator items expand once the gesture is started. Initial touch position provides **a horizontal anchor point** around which all expansions happen. This **ensures that the target item doesn’t move during the gesture**.\n\n**Vertical expansion** provides space for the label. Expanded item acts as a clear navigation element when indicators are open. Now two unconnected elements from the previous design were combined to one meaningful element.\n\n**Horizontal expansion provides space for more robust gesture** which was further enhanced with vertical velocity buffering and maximum vertical velocity threshold."
+      },
+      {
+        "type": "ImageGallery",
+        "images": [
+          {
+            "src": "/project-5/sketch.webp",
+            "alt": "Design mockup 1 showing the new indicator interactions.",
+            "caption": "Design mockup 1 showing the new indicator interactions."
+          },
+          {
+            "src": "/project-5/variations.webp",
+            "alt": "Design mockup 2 showing the new indicator interactions.",
+            "caption": "Design mockup 2 showing the new indicator interactions."
+          },
+          {
+            "src": "/project-5/spec.webp",
+            "alt": "Design mockup 3 showing the new indicator interactions.",
+            "caption": "Design mockup 3 showing the new indicator interactions."
+          }
+        ]
+      },
+      {
+        "type": "EmbeddedVideo",
+        "url": "https://vimeo.com/1146523128?fl=tl&fe=ec",
+        "caption": "Functional prototype demonstrating the new indicator interactions."
+      },
+      {
+        "type": "TextSection",
+        "title": "The UX Impact",
+        "text": "The new design retained all the good functionality from the old indicators while fixing all usability issues. The new indicator design was user tested multiple times and the results have been significantly better. It fullfilled the stakeholder expectations and also got great feedback from the actual Ubuntu phone users."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "screenreader-plugin-for-figma",
+    "title": "Figma Screen Reader Plugin", 
+    "categories": ["Tooling", "Accessibility", "Prototyping"],
+    "description": "Figma plugin to increase design workshop accessibility and productivity.", 
+    "thumbnail": "/project-6/thumb.webp",
+    "featured": true,
+    "featured_image": "/project-6/featured.webp",
+    "show": true,
+    "year": 2023,
+    "role": "Principal Designer",
+    "client": "Microsoft Corporation",
+    "content":[
+      {
+        "type": "TextSection",
+        "title": "The Challenge",
+        "text": "I attended a workshop focused on identifying problems with programming tools and improving the user experience from the perspective of screen reader users. I interviewed users and tried to communicate the tools I had created to them. I noticed the difficulty in communication because the designs were visual presentations, while visually impaired users rely on a screen reader as their sole interface daily. Validating the designs and obtaining concrete feedback was challenging."
+      },
+      {
+        "type": "TextSection",
+        "title": "The Solution",
+        "text": "I wanted to design a better process and tool for accessible communication of designs to all workshop participants. I developed a plugin for the Figma design software I was using, which acted as a connecting tissue between the design tool and the operating system’s (macOS or Windows) screen reader (Narrator, VoiceOver, NVDA, JAWS, etc). The tool allowed designer to specify screenreader anouncements (ARIA live regions) that were spoken aloud while the design was being interacted with."
+      },
+      {
+        "type": "ImageGallery",
+        "images": [
+          {
+            "src": "/project-6/instructions-create.webp",
+            "alt": "Documentation screenshot showing how to create screen reader annotations in Figma.",
+            "caption": "Create: Documentation on how to create screen reader annotations in Figma."
+          },
+          {
+            "src": "/project-6/instructions-play.webp",
+            "alt": "Documentation screenshot showing how to play screen reader annotations in Figma.",
+            "caption": "Play: Documentation on how to play screen reader annotations in Figma."
+          }
+        ]
+      },
+      {
+        "type": "TextSection",
+        "title": "The Impact",
+        "text": "The tool enabled more effective communication with visually impaired users, allowing us to receive concrete feedback on our solutions. This process strengthened empathy and collaboration with screen reader users and provided valuable insights into their specific needs. Personally, I gained extensive experience with screen readers, accessibility best practices, Copilot AI-assisted coding, Figma plugins, and the Vue front-end framework, which was new to me."
+      }
+    ]
+  } 
 ]

@@ -17,6 +17,7 @@
 	let carouselInitialIndex = 0;
 
 	// Extract all images and videos from project.content
+	// add featured_image and project.images as well
 	function extractMediaItems(content) {
 		const items = [];
 		if (!content) return items;
@@ -65,6 +66,20 @@
 		} else {
 			carouselItems = [];
 		}
+		// Set prev_project and next_project based on id
+		if (project) {
+			// filter only shown projects
+			const shownProjects = projects.filter(p => p.show);
+			// Sort projects by id
+			const sortedProjects = [...shownProjects].sort((a, b) => a.id - b.id);
+			const currentIndex = sortedProjects.findIndex(p => p.id === project.id);
+
+			const prev = currentIndex > 0 ? sortedProjects[currentIndex - 1] : null;
+			const next = currentIndex < sortedProjects.length - 1 ? sortedProjects[currentIndex + 1] : null;
+
+			project.prev_project = prev ? { slug: prev.slug, title: prev.title } : null;
+			project.next_project = next ? { slug: next.slug, title: next.title } : null;
+		}
 	}
 
 </script>
@@ -109,16 +124,16 @@
 					<p class="font-semibold">{project.categories.join(', ')}</p>
 				</div>
 				<div>
-					<p class="text-sm text-muted-foreground mb-1">Year</p>
-					<p class="font-semibold">{project.year}</p>
-				</div>
-				<div>
 					<p class="text-sm text-muted-foreground mb-1">Role</p>
 					<p class="font-semibold">{project.role}</p>
 				</div>
 				<div>
 					<p class="text-sm text-muted-foreground mb-1">Client</p>
 					<p class="font-semibold">{project.client}</p>
+				</div>
+				<div>
+					<p class="text-sm text-muted-foreground mb-1">Year</p>
+					<p class="font-semibold">{project.year}</p>
 				</div>
 			</div>
 
@@ -194,22 +209,26 @@
 
 			<!-- Navigation -->
 			<div class="flex justify-between mt-16 pt-8 border-t border-muted">
-				{#if project.prev_project}
-					<a href="/projects/{project.prev_project.slug}" class="group">
-						<p class="text-sm text-muted-foreground mb-1">← Previous</p>
-						<p class="font-semibold group-hover:text-muted-foreground transition-colors">
-							{project.prev_project.title}
-						</p>
-					</a>
-				{/if}
-				{#if project.next_project}
-					<a href="/projects/{project.next_project.slug}" class="group text-right">
-						<p class="text-sm text-muted-foreground mb-1">Next →</p>
-						<p class="font-semibold group-hover:text-muted-foreground transition-colors">
-							{project.next_project.title}
-						</p>
-					</a>
-				{/if}
+				<div>
+					{#if project.prev_project}
+						<a href="/projects/{project.prev_project.slug}" class="group">
+							<p class="text-sm text-muted-foreground mb-1">← Previous</p>
+							<p class="font-semibold group-hover:text-muted-foreground transition-colors">
+								{project.prev_project.title}
+							</p>
+						</a>
+					{/if}
+				</div>
+				<div class="text-right">
+					{#if project.next_project}
+						<a href="/projects/{project.next_project.slug}" class="group">
+							<p class="text-sm text-muted-foreground mb-1">Next →</p>
+							<p class="font-semibold group-hover:text-muted-foreground transition-colors">
+								{project.next_project.title}
+							</p>
+						</a>
+					{/if}
+				</div>
 			</div>
 		</div>
 	{:else}
